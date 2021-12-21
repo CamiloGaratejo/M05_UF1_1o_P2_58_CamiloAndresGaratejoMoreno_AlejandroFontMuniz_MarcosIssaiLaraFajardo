@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "Player.h"
+#include "TimeManager.h"
 
 /// <summary>
 /// Sets the needed variables
@@ -106,4 +107,9 @@ void Draw()
         ConsoleUtils::Console_SetColor(ConsoleUtils::CONSOLE_COLOR::GREEN);
         std::cout << "Has ganado!" << std::endl;
     }
+    std::cout << "Fotogramas: " << TimeManager::getInstance().frameCount << std::endl;
+    std::cout << "Time: " << TimeManager::getInstance().time << std::endl;
+    std::cout << "DeltaTime: " << TimeManager::getInstance().deltatime << std::endl;
+
+    TimeManager::getInstance().NextFrame();
 }
